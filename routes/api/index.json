@@ -1,0 +1,28 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Product 1",
+            "price": 100,
+            "description": "Product 1 description",
+            "image": "https://w7.pngwing.com/pngs/646/612/png-transparent-saltwater-sandals-shoe-sandals-white-child-leather.png",
+            "category": "Category 1"
+        },
+        {
+            "id": 2,
+            "name": "Product 2",
+            "price": 200,
+            "description": "Product 2 description",
+            "image": "https://w7.pngwing.com/pngs/361/264/png-transparent-sandal-shoe-fashion-footwear-huarache-sandal-fashion-outdoor-shoe-black.png",
+            "category": "Category 2"
+        },
+        {
+            "id": 3,
+            "name": "Product 3",
+            "price": 300,
+            "description": "Product 3 description",
+            "image": "https://w7.pngwing.com/pngs/214/235/png-transparent-nike-free-sneakers-huarache-shoe-nike.png",
+            "category": "Category 3"
+        }
+    ]
+}
