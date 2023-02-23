@@ -1,10 +1,10 @@
 import { Handlers, PageProps } from "https://deno.land/x/fresh@1.1.3/server.ts";
 import { Product } from "@/utils/types.ts";
 import { HeadElement } from "@/components/HeadElement.tsx";
-import Header from "../../components/header.tsx";
-import ProductDetails from "../../islands/ProductDetails.tsx";
-import Footer from "../../components/Footer.tsx";
-import { getProduct } from "../../utils/products.ts";
+import Header from "@/components/Header.tsx";
+import ProductDetails from "@/islands/ProductDetails.tsx";
+import Footer from "@/components/Footer.tsx";
+import { getProduct } from "@/utils/products.ts";
 
 export const handler: Handlers<Product> = {
   async GET(_req, ctx) {
