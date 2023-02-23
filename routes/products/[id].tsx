@@ -1,28 +1,25 @@
 import { Handlers, PageProps } from "https://deno.land/x/fresh@1.1.3/server.ts";
 import { Product } from "@/utils/types.ts";
-import { HeadElement } from "../../components/HeadElement.tsx";
+import { HeadElement } from "@/components/HeadElement.tsx";
 import Header from "../../components/header.tsx";
 import ProductDetails from "../../islands/ProductDetails.tsx";
 import Footer from "../../components/Footer.tsx";
+import { getProduct } from "../../utils/products.ts";
 
 export const handler: Handlers<Product> = {
   async GET(_req, ctx) {
-    const id = ctx.params.product;
-    console.log(id);
-    const res = await fetch(
-      `https://0f369382-86d7-4ee6-adb5-ec24b4c90a3c.mock.pstmn.io/products?id=${id}`,
-    );
-    const data = await res.json();
-    console.log(data);
-
-    if (!data) {
-      return new Response("Product not found", { status: 404 });
+    const { id } = ctx.params;
+    const product = await getProduct({ id });
+    if (!product) {
+      return ctx.renderNotFound();
     }
-    return ctx.render(data);
+    return ctx.render(product);
   },
 };
 
 export default function ProductPage(ctx: PageProps<Product>) {
+  console.log(ctx);
+
   const { data, url } = ctx;
 
   if (!data) {
